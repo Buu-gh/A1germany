@@ -1,0 +1,30 @@
+const fs=require('fs');
+const voc=JSON.parse(fs.readFileSync('vocab_clean.json','utf8'));
+const C=[...require('./c1.js'),...require('./c2.js'),...require('./c3.js')];
+const FIX=[[/Nachtmittag/g,'Nachmittag'],[/gelenrt/g,'gelernt'],[/Flüchte/g,'Früchte'],[/Arbeitplatz/g,'Arbeitsplatz'],[/Orangesaft/g,'Orangensaft'],[/\brechst\b/g,'rechts'],[/Kamillientee/g,'Kamillentee'],[/sympatisch/g,'sympathisch'],[/ordenlich/g,'ordentlich'],[/hat getragt/g,'hat getragen'],[/hat gerillt/g,'hat gegrillt'],[/\bBief\b/g,'Brief'],[/Farher/g,'Fahrer'],[/T- Schirt/g,'T-Shirt'],[/Gurtel anlegen/g,'den Gurt anlegen'],[/Badzimmer/g,'Badezimmer'],[/Auf wiederhören/g,'Auf Wiederhören'],[/S- Bahn/g,'S-Bahn'],[/U- Bahn/g,'U-Bahn'],[/e\.Firmen/g,'die Firmen'],[/e\.Museen/g,'die Museen'],[/e\.Zentren/g,'die Zentren'],[/e\. Geburtsdaten/g,'die Geburtsdaten'],[/bổ xung/g,'bổ sung'],[/màu tỗi/g,'màu tối'],[/mảnh khản\b/g,'mảnh khảnh'],[/lich sự/g,'lịch sự'],[/chạm dừng/g,'trạm dừng'],[/đâu tiên/g,'đầu tiên'],[/của sổ/g,'cửa sổ'],[/Das Wetter ist hart/g,'Das Wetter ist hart'],[/rượu ngọt nhưng đối mạnh/g,'rượu mùi ngọt, khá mạnh'],[/kĩ thuật$/,'kỹ thuật viên']];
+const fx=s=>{if(typeof s!=='string')return s;for(const[a,b]of FIX)s=s.replace(a,b);return s};
+for(const L of voc){for(const w of L.words){for(const k of Object.keys(w)){if(Array.isArray(w[k]))w[k]=w[k].map(fx);else w[k]=fx(w[k]);}
+ if(w.de==='Zitrone'||w.de==='die Zitrone'){} if(/Zitrone/.test(w.de))w.vi='quả chanh';
+ if(w.pl&&/^-?(n|en|s|e)\(.*\)$/.test(w.pl)){w.pl=w.pl.replace(/\(.*$/,'');}
+ if(w.pl==='sbekommen'){w.pl='-s';w.de='ein Baby bekommen';delete w.a;w.ty=undefined;}
+ if(w.pl==='e(Weißbier)'){w.pl='-e';w.note='das Weißbier: bia lúa mì';}
+ if(w.de==='Zitrone')w.vi='quả chanh';
+}}
+// L3 countries
+const countries=[["Japan","Nhật Bản","der Japaner","die Japanerin","Japanisch"],["Deutschland","Đức","der Deutsche","die Deutsche","Deutsch"],["China","Trung Quốc","der Chinese","die Chinesin","Chinesisch"],["Spanien","Tây Ban Nha","der Spanier","die Spanierin","Spanisch"],["Russland","Nga","der Russe","die Russin","Russisch"],["Frankreich","Pháp","der Franzose","die Französin","Französisch"],["Österreich","Áo","der Österreicher","die Österreicherin","Deutsch"],["Polen","Ba Lan","der Pole","die Polin","Polnisch"],["Portugal","Bồ Đào Nha","der Portugiese","die Portugiesin","Portugiesisch"],["Griechenland","Hy Lạp","der Grieche","die Griechin","Griechisch"],["Vietnam","Việt Nam","der Vietnamese","die Vietnamesin","Vietnamesisch"],["Finnland","Phần Lan","der Finne","die Finnin","Finnisch"],["Italien","Ý","der Italiener","die Italienerin","Italienisch"],["England","Anh","der Engländer","die Engländerin","Englisch"],["Schweden","Thụy Điển","der Schwede","die Schwedin","Schwedisch"],["die Schweiz","Thụy Sĩ","der Schweizer","die Schweizerin","Deutsch, Französisch, Italienisch"],["die Türkei","Thổ Nhĩ Kỳ","der Türke","die Türkin","Türkisch"],["der Irak","Iraq","der Iraker","die Irakerin","Arabisch, Kurdisch"],["der Iran","Iran","der Iraner","die Iranerin","Farsi / Persisch"],["die USA (Pl.)","Mỹ","der Amerikaner","die Amerikanerin","Englisch"],["die Niederlande (Pl.)","Hà Lan","der Niederländer","die Niederländerin","Niederländisch"]];
+const L3=voc.find(l=>l.n===3);
+for(const c of countries){L3.words.push({de:c[0],vi:c[1],ty:'land',b:'Arbeitsbuch',s:'Länder und Nationalitäten — Quốc gia và quốc tịch',note:`${c[2]} / ${c[3]} · Sprache: ${c[4]}`});}
+// L24 supplement (not in source vocab file)
+const s24='Bổ sung (file từ vựng chưa có Lektion 24)';
+const L24=[["das Fest","-e","lễ hội","n","die"],["der Geburtstag","-e","sinh nhật"],["die Party","-s","bữa tiệc"],["die Hochzeit","-en","đám cưới"],["Weihnachten","","Lễ Giáng sinh"],["Ostern","","Lễ Phục sinh"],["Silvester","","Đêm giao thừa"],["das Neujahr","","Năm mới"],["der Valentinstag","-e","Ngày Lễ Tình nhân"],["der Muttertag","-e","Ngày của Mẹ"],["das Geschenk","-e","món quà"],["die Einladung","-en","lời mời, thiệp mời"],["der Gast","¨e","khách"],["die Kerze","-n","cây nến"],["die Torte","-n","bánh kem"],["das Datum","die Daten","ngày tháng"],["der Wunsch","¨e","mong ước"],["die Reise","-n","chuyến đi"],["feiern","","tổ chức, ăn mừng","v","hat gefeiert"],["gratulieren","","chúc mừng (+ Dativ)","v","hat gratuliert"],["schenken","","tặng","v","hat geschenkt"],["einladen","","mời","v","hat eingeladen"],["wünschen","","chúc, mong muốn","v","hat gewünscht"],["würde","","sẽ / muốn (Konjunktiv II)","v",""],["am liebsten","","thích nhất","adv",""],["Herzlichen Glückwunsch!","","Chúc mừng!","phr",""],["Alles Gute!","","Chúc mọi điều tốt đẹp!","phr",""],["Frohe Weihnachten!","","Giáng sinh vui vẻ!","phr",""],["Frohes neues Jahr!","","Chúc mừng năm mới!","phr",""],["Gut gemacht!","","Làm tốt lắm!","phr",""],["Gute Besserung!","","Chúc mau khỏe!","phr",""],["Viel Glück!","","Chúc may mắn!","phr",""],["der erste","","thứ nhất / ngày mùng 1","adj",""],["der zweite","","thứ hai / ngày 2","adj",""],["der dritte","","thứ ba / ngày 3","adj",""],["der siebte","","thứ bảy / ngày 7","adj",""],["der achte","","thứ tám / ngày 8","adj",""],["der zwanzigste","","thứ hai mươi / ngày 20","adj",""]];
+const w24=L24.map(r=>{const m=r[0].match(/^(der|die|das) (.+)$/);let w={de:r[0],vi:r[2],b:'Kursbuch',s:s24};
+ if(m&&!r[3]){w.a=m[1];w.de=m[2];w.ty='n';if(r[1])w.pl=r[1];}else{w.ty=r[3]||'n';if(r[4])w.perf=r[4];}
+ if(w.ty==='n'&&!w.a)w.ty='phr';return w;});
+voc.push({n:24,words:w24});
+// normalize: strip leading articles text in de already split; classify type
+for(const L of voc){for(const w of L.words){ if(!w.ty){ if(/[!?]/.test(w.de)||w.de.split(' ').length>2) w.ty='phr'; else if(/^[a-zäöüß]+(en|ern|eln)$/.test(w.de) && !w.a) w.ty='v'; } }}
+const out={lessons:C.map(c=>({...c,modul:Math.ceil(c.n/3)})),vocab:{}};
+for(const L of voc)out.vocab[L.n]=L.words;
+fs.writeFileSync('data.json',JSON.stringify(out));
+console.log('bytes',fs.statSync('data.json').size, 'words',voc.reduce((a,l)=>a+l.words.length,0));
+for(const c of C){if(c.ex.length<8)console.log('few ex',c.n)}

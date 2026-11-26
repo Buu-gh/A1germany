@@ -1,0 +1,61 @@
+// Kursbuch guide (kb) + Arbeitsbuch exercises (ab) per lesson
+// kb steps: [seite, aufgabe, audio, deutsch, việt, ab?]
+// ab exercise types: cloze (lines with [answer|alt] and {*right|wrong}), match (pairs), sort (lines in correct order), note
+module.exports = {
+1:{
+kb:{pages:"S. 11–14",
+intro:"Bài mở đầu: chào hỏi, giới thiệu tên, quê quán và hỏi thăm sức khỏe. Học theo thứ tự các bài 1 → 11 trong sách, sau mỗi bài có chữ AB thì làm bài tương ứng trong Arbeitsbuch (tab bên cạnh).",
+steps:[
+["11","1","1.02","Hören Sie. Wie heißt das Lied? Welche deutschen Namen kennen Sie noch?","Nghe bài hát và đoán tên bài. Kể thêm các tên tiếng Đức bạn biết.",""],
+["11","2","1.03","Und wer bist du? a Hören Sie und kreuzen Sie an. b Kettenspiel: Sprechen Sie. c Zeichnen Sie einen Sitzplan.","Nghe và đánh dấu tên đúng (Winfried / Paco / Nicole). Luyện nói nối tiếp: „Hallo! Ich bin … Und wer bist du?“. Vẽ sơ đồ chỗ ngồi và ghi tên các bạn.","AB 1"],
+["12","3","1.04","Ich komme aus Mexiko. a Wer sagt was? b Ergänzen Sie und vergleichen Sie mit a.","Nghe hội thoại, nối câu với người nói (Paco / Nicole). Điền đuôi động từ: Woher komm<b>st</b> du? Ich komm<b>e</b> aus Mexiko. Ghi nhớ: aus der Schweiz, aus der Türkei, aus dem Iran.","AB 2–4"],
+["12","4","1.05","Woher kommt die Musik? Hören Sie und ordnen Sie zu.","Nghe 5 đoạn nhạc, đoán nhạc đến từ nước nào (Iran, Österreich, Spanien, Frankreich, Türkei).","AB 5"],
+["12","5","1.06","Wer sagt was? Hören Sie das Gespräch weiter und kreuzen Sie an.","Nghe tiếp hội thoại, đánh dấu ai nói câu nào (Paco, Nicole hay Frau Wachter).",""],
+["13","6","1.07","Woher kommst du? a Was sagt Frau Wachter? b Gespräche üben: du oder Sie? c Hören Sie noch einmal und ergänzen Sie. d Bekannte Persönlichkeiten.","Học cách xưng hô: <b>Sie</b> với họ (Herr Rodriguez, Frau Wachter), <b>du</b> với tên (Nicole, Paco). Điền từ vào hội thoại. Giới thiệu người nổi tiếng: „Das ist … Er/Sie kommt aus …“ (làm theo cặp, trang 141/143).","AB 6–11"],
+["13","7","1.08","Was sagen die Personen? Hören Sie noch einmal und ordnen Sie zu.","Học cách hỏi thăm: Wie geht's? / Wie geht es Ihnen? / dir? và các câu trả lời từ Sehr gut đến Nicht so gut.","AB 12–13"],
+["13","8","","Gespräche üben: Nach dem Befinden fragen. Arbeiten Sie auf Seite 139.","Luyện hỏi thăm sức khỏe theo cặp (trang 139).",""],
+["14","9","1.09","Das Alphabet. a Hören Sie und sprechen Sie nach. b Diktieren Sie Ihren Namen.","Nghe và đọc theo bảng chữ cái. Đánh vần tên của bạn: „Ich buchstabiere: …“. Trên web: nghe phát âm từng chữ ở tab Từ vựng.","AB 14"],
+["14","10","1.10","Hallo oder tschüs? Hören Sie die Wendungen aus dem Bildlexikon und ordnen Sie zu.","Chia các câu chào vào cột Begrüßung (chào gặp) và Abschied (chào tạm biệt).","AB 15"],
+["14","11","","Verabschieden Sie sich am Ende der Stunde.","Cuối giờ, chào tạm biệt mọi người bằng tiếng Đức.",""]
+],
+tips:["Ôn bảng GRAMMATIK và KOMMUNIKATION ở cuối trang 14: đây chính là nội dung tab Ngữ pháp và Giao tiếp trên web.","Sau khi học xong sách, làm phần TEST của Arbeitsbuch ở tab này để tự kiểm tra (có đáp án chính thức)."]},
+ab:[
+{k:"1",ref:"KB 2",de:"Ordnen Sie zu.",vi:"Điền các từ cho sẵn vào chỗ trống.",t:"cloze",bank:["heiße","du","Hallo","heißt","ich","wer","wie"],
+lines:["■ Hallo! Ich bin Wiebke. Und [wer] bist [du]?","▲ [Hallo], [ich] bin Stefan.","■ Ich heiße René. Und [wie] [heißt] du?","▲ Ich [heiße] Alfred."]},
+{k:"2",ref:"KB 3",de:"Sortieren Sie.",vi:"Sắp xếp các câu thành hội thoại đúng thứ tự.",t:"sort",
+lines:["Hallo! Ich heiße Roberto, und wer bist du?","Ich heiße Melanie.","Und woher kommst du? Aus Deutschland?","Ja, ich komme aus Deutschland. Und woher kommst du, Roberto? Aus Portugal?","Nein, ich komme aus Brasilien.","Aus Brasilien? Wow!"]},
+{k:"3",ref:"KB 3",de:"Ordnen Sie zu.",vi:"Nối phần đầu với phần cuối câu.",t:"match",
+pairs:[["Wie","heißt du?"],["Ich heiße","Sandra."],["Woher","kommst du?"],["Ich komme","aus der Schweiz."],["Wer","bist du?"],["Ich","bin Pedro."]]},
+{k:"4",ref:"KB 3",de:"Ergänzen Sie.",vi:"Điền từ còn thiếu vào hội thoại.",t:"cloze",
+lines:["a ■ Hallo! Ich bin Simon. [Wie] heißt du?","▲ Ich [heiße|bin] Steffi.","■ Und [woher] kommst [du]? Aus Österreich?","▲ Nein, ich [komme] aus Deutschland.","b ■ Hallo! Ich bin Sofia, [und] wer [bist] du?","▲ [Ich] heiße Philipp.","■ Und woher [kommst] du?","▲ Ich komme [aus] der Schweiz."]},
+{k:"5",ref:"KB 4",de:"Länder. Welches Land passt? Ordnen Sie zu.",vi:"Công trình nổi tiếng này ở nước nào?",t:"match",
+pairs:[["Brandenburger Tor","Deutschland"],["Eiffelturm","Frankreich"],["Stephansdom","Österreich"],["Matterhorn","die Schweiz"],["Hagia Sophia","die Türkei"]]},
+{k:"7",ref:"KB 6a",de:"du oder Sie? Kreuzen Sie an.",vi:"Chọn du hay Sie.",t:"cloze",
+lines:["a Woher kommen {du|*Sie}, Herr Svendson?","b Hallo, ich bin Tine. Und wer bist {*du|Sie}?","c Kolja, woher kommst {*du|Sie}?","d Frau Klein, woher kommen {du|*Sie}?","e Woher kommst {*du|Sie}, Shema?"]},
+{k:"8",ref:"KB 6a",de:"Ergänzen Sie.",vi:"Điền đuôi động từ.",t:"cloze",
+lines:["a ■ Woher komm[st] du?","▲ Ich komm[e] aus Spanien. Und du?","■ Ich komm[e] aus dem Iran.","b ■ Hallo. Ich heiß[e] Maria. Und wie heiß[t] du?","▲ Ich heiß[e] Michael.","c ■ Guten Tag, Frau Matard. Woher komm[en] Sie? Aus Frankreich?","▲ Nein, ich komm[e] aus der Schweiz."]},
+{k:"9",ref:"KB 6c",de:"Schreiben Sie Sätze zu den Fotos.",vi:"Viết câu giới thiệu người trong ảnh. Ví dụ: Das ist Philipp Lahm. Er kommt aus Deutschland.",t:"cloze",
+lines:["B (Wolfgang Amadeus Mozart, Österreich): Das [ist] Wolfgang Amadeus Mozart. [Er] [kommt] aus [Österreich].","C (König Felipe VI., Spanien): Das [ist] König Felipe VI. [Er] kommt [aus] [Spanien].","D (Martina Hingis, Schweiz): Das ist Martina Hingis. [Sie] [kommt] aus [der] Schweiz."]},
+{k:"10",ref:"KB 6c",de:"Ergänzen Sie und markieren Sie die Endungen.",vi:"Điền bảng chia động từ.",t:"cloze",
+lines:["ich: heißen → [heiße] · kommen → [komme] · sein → [bin]","du: heißen → [heißt] · kommen → [kommst] · sein → [bist]","Sie: heißen → [heißen] · kommen → [kommen] · sein → [sind]","er/sie: heißen → [heißt] · kommen → [kommt] · sein → [ist]"]},
+{k:"11",ref:"KB 6d",de:"Was ist richtig? Markieren Sie.",vi:"Chọn dạng động từ đúng.",t:"cloze",
+lines:["a Wer {bist|*ist|sind} das?","b Das {bin|sind|*ist} Frau Wachter.","c Woher {komme|kommst|*kommen} Sie?","d Peter {komme|kommst|*kommt} aus Spanien.","e Woher {kommst|*kommt|kommen} Frau Wallander?"]},
+{k:"12",ref:"KB 7",de:"Wie geht's? Ordnen Sie zu.",vi:"Xếp câu trả lời theo mức độ: 😊😊 rất tốt → ☹ không tốt.",t:"cloze",bank:["Nicht so gut.","Sehr gut, danke.","Es geht.","Gut, danke."],
+lines:["😊😊 [Sehr gut, danke.|Sehr gut, danke|Sehr gut]","😊 [Gut, danke.|Gut, danke|Gut] / Auch gut.","😐 [Es geht.|Es geht]","☹ [Nicht so gut.|Nicht so gut]"]},
+{k:"13",ref:"KB 7",de:"Ergänzen Sie.",vi:"Điền câu hỏi / đáp phù hợp.",t:"cloze",bank:["Und wie geht es dir?","Und Ihnen?","Wie geht's?"],
+lines:["a ▲ Guten Tag Herr Stein! Wie geht es Ihnen?","■ Gut, danke. [Und Ihnen?|Und Ihnen]","▲ Auch gut.","b ● Hallo Svenja! [Wie geht's?|Wie geht's|Wie gehts]","■ Sehr gut! [Und wie geht es dir?|Und wie geht es dir]","● Ach, nicht so gut."]},
+{k:"14",ref:"KB 9",de:"Welche Namen hören Sie? Notieren Sie.",vi:"Bài nghe (CD 1.02). Hãy làm trong sách, trang 10.",t:"note"},
+{k:"15",ref:"KB 10",de:"Begrüßung und Abschied – Markieren Sie und ordnen Sie zu.",vi:"Tìm trong chuỗi chữ các câu chào: ichhalloausneinguten­tagwoherauf­wiedersehen­ichgutenachtesgeht­fraudutschüswieguten­abendheißt.",t:"cloze",
+lines:["Tìm 6 câu chào: [Hallo], [Guten Tag], [Auf Wiedersehen], [Gute Nacht], [Tschüs], [Guten Abend]"]},
+{k:"T1",test:true,de:"Was passt zusammen? Ordnen Sie zu.",vi:"Ghép thành các câu chào.",t:"cloze",bank:["Abend","Morgen","Auf","Guten","Nacht","Gute","Wiedersehen","Guten"],
+lines:["Guten Tag","[Guten] Morgen","Guten [Abend]","[Gute] Nacht","[Auf] Wiedersehen"]},
+{k:"T2",test:true,de:"Was ist richtig? Kreuzen Sie an.",vi:"Chọn từ đúng.",t:"cloze",
+lines:["■ Hallo, wer bist du?","▲ Ich {*bin|komme} Max.","■ Und der {*Familienname|Vorname}?","▲ Wachter.","■ {*Woher|Wie} kommst du?","▲ {*Aus|Aus dem} Österreich.","■ Und {was|*wie} geht es dir?","▲ {Nein.|*Sehr gut!}"]},
+{k:"T3",test:true,de:"Ergänzen Sie die Verben in der richtigen Form.",vi:"Chia động từ trong ngoặc.",t:"cloze",
+lines:["a ■ Wie heißt du? (heißen)","▲ Ich [heiße] Marie. (heißen)","■ Und woher [kommst] du? (kommen)","▲ Aus der Schweiz.","b ▲ Und wie [heißen] Sie? (heißen)","■ Juana Weinrich.","▲ Woher [kommen] Sie? (kommen)","■ Ich [komme] aus Deutschland. (kommen)","c ▲ Wer [bist] du? (sein)","■ Ich [bin] Paco. (sein)","d ▲ Wer [ist] das? (sein)","■ Frau Delgado. Sie [kommt] aus Spanien. (kommen)"]},
+{k:"T4",test:true,de:"Ergänzen Sie.",vi:"Hoàn thành hội thoại hỏi thăm.",t:"cloze",
+lines:["a ■ Hallo Susan, wie geht es dir?","▲ [Es geht] 😐. Und [dir]? (du)","■ [Gut, danke|Gut|Sehr gut|Sehr gut, danke] 😊.","b ■ Guten Morgen Herr Bux, [wie geht es Ihnen|wie geht's]?","▲ [Nicht so gut] ☹. Und [Ihnen]? (Sie)","■ [Sehr gut, danke|Sehr gut] 😊😊."]},
+{k:"T5",test:true,de:"Ordnen Sie und schreiben Sie Gespräche.",vi:"Ghép câu nói với câu đáp.",t:"match",
+pairs:[["Hallo, ich heiße Oborowski.","Wie bitte? Obolanski?"],["Ich komme aus Italien, und du?","Aus der Türkei."],["Sind Sie Frau Rode?","Nein, mein Name ist Koch."],["Wie geht's?","Sehr gut. Und dir?"]]}
+]}
+};
